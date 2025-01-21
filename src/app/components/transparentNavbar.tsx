@@ -17,7 +17,7 @@ const TransparentNavbar: React.FC = () => {
   };
 
   return (
-    <nav className="flex items-center text-black px-6 py-4 w-full m-auto text-sm  bg-transparent">
+    <nav className="flex items-center text-black px-6 py-4 w-full m-auto text-sm bg-transparent">
       {/* Logo */}
       <div className="flex items-center justify-center">
         <div className="hidden md:block">
@@ -44,8 +44,8 @@ const TransparentNavbar: React.FC = () => {
         <div className="block max-[494px]:hidden">
           <li>
             <a
-              href="#buy"
-              className={`hover:bg-gray-100 px-4 py-2 transition ${
+              href="/buy"
+              className={`px-4 py-2 transition ${
                 activeButton === "buy" ? "bg-white/20 backdrop-blur-md" : ""
               }`}
               onClick={() => handleButtonClick("buy")}
@@ -58,10 +58,8 @@ const TransparentNavbar: React.FC = () => {
           <li>
             <a
               href="/buy"
-              className={`hover:bg-gray-100 px-4 py-2 transition ${
-                activeButton === "buy"
-                  ? "bg-white/30 border border-white shadow-lg"
-                  : "hover:bg-black/10"
+              className={`px-4 py-2 transition ${
+                activeButton === "buy" ? "bg-white/20 backdrop-blur-md" : ""
               }`}
               onClick={() => handleButtonClick("buy")}
             >
@@ -71,21 +69,39 @@ const TransparentNavbar: React.FC = () => {
         </div>
         <div className="block max-[494px]:hidden">
           <li>
-            <a href="/sell" className="hover:bg-gray-100 px-4 py-2 transition">
+            <a
+              href="/sell"
+              className={`px-4 py-2 transition ${
+                activeButton === "sell" ? "bg-white/20 backdrop-blur-md" : ""
+              }`}
+              onClick={() => handleButtonClick("sell")}
+            >
               SELL YOUR HOUSE
             </a>
           </li>
         </div>
         <div className="hidden max-[494px]:block">
           <li>
-            <a href="/sell" className="hover:bg-gray-100 px-4 py-2 transition">
+            <a
+              href="/sell"
+              className={`px-4 py-2 transition ${
+                activeButton === "sell" ? "bg-white/20 backdrop-blur-md" : ""
+              }`}
+              onClick={() => handleButtonClick("sell")}
+            >
               SELL
             </a>
           </li>
         </div>
         <div className="block max-[494px]:hidden">
           <li>
-            <a href="/about" className="hover:bg-gray-100 px-4 py-2 transition">
+            <a
+              href="/about"
+              className={`px-4 py-2 transition ${
+                activeButton === "about" ? "bg-white/20 backdrop-blur-md" : ""
+              }`}
+              onClick={() => handleButtonClick("about")}
+            >
               ABOUT US
             </a>
           </li>
