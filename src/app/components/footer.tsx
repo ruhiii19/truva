@@ -99,7 +99,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="container flex flex-col items-center space-y-0 md:space-y-2">
+      <div className="w-full flex flex-col items-center space-y-0 md:space-y-2 overflow-hidden">
         <p className="text-xs md:text-sm text-black-600 text-center">
           WITH LOVE, FROM BEAUTIFUL POWAI
         </p>
