@@ -17,7 +17,7 @@ const TransparentNavbar: React.FC = () => {
   };
 
   return (
-    <nav className="flex items-center text-black px-6 py-4 w-full m-auto text-sm bg-transparent">
+    <nav className="flex items-center px-6 py-4 w-full text-white m-auto text-sm bg-transparent">
       {/* Logo */}
       <div className="flex items-center justify-center">
         <div className="hidden md:block">
@@ -40,7 +40,7 @@ const TransparentNavbar: React.FC = () => {
       </div>
 
       {/* Navigation Links */}
-      <ul className="flex ml-auto md:gap-8 text-white">
+      <ul className="flex ml-auto md:gap-8">
         <div className="block max-[494px]:hidden">
           <li>
             <a

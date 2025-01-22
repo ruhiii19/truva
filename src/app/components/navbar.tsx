@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { useState } from "react";
 
-const Navbar: React.FC = () => {
+const TransparentNavbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeButton, setActiveButton] = useState<string | null>(null);
 
@@ -17,12 +17,22 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="flex items-center text-black px-6 py-4 w-full bg-white m-auto text-sm">
+    <nav
+      className={`flex items-center px-6 py-4 w-full m-auto text-sm ${
+        activeButton === "sell"
+          ? "text-black bg-white"
+          : "text-white bg-transparent"
+      } `}
+    >
       {/* Logo */}
       <div className="flex items-center justify-center">
         <div className="hidden md:block">
           <Image
-            src="/assets/blacklogo.svg"
+            src={
+              activeButton === "sell"
+                ? "/assets/blacklogo.svg"
+                : "/assets/whiteLogo.svg"
+            }
             alt="Instagram"
             width={125}
             height={23}
@@ -31,7 +41,11 @@ const Navbar: React.FC = () => {
 
         <div className="block md:hidden">
           <Image
-            src="/assets/Logoblacksmall.svg"
+            src={
+              activeButton === "sell"
+                ? "/assets/Logoblacksmall.svg"
+                : "/assets/minilogoWhite.svg"
+            }
             alt="Instagram"
             width={47}
             height={24}
@@ -44,9 +58,9 @@ const Navbar: React.FC = () => {
         <div className="block max-[494px]:hidden">
           <li>
             <a
-              href="/buy"
+              href="#buy"
               className={`px-4 py-2 transition ${
-                activeButton === "buy" ? "bg-[#f5f4ed] backdrop-blur-md" : ""
+                activeButton === "buy" ? "bg-white/20 backdrop-blur-md" : ""
               }`}
               onClick={() => handleButtonClick("buy")}
             >
@@ -59,7 +73,7 @@ const Navbar: React.FC = () => {
             <a
               href="/buy"
               className={`px-4 py-2 transition ${
-                activeButton === "buy" ? "bg-[#f5f4ed] backdrop-blur-md" : ""
+                activeButton === "buy" ? "bg-white/20 backdrop-blur-md" : ""
               }`}
               onClick={() => handleButtonClick("buy")}
             >
@@ -96,9 +110,9 @@ const Navbar: React.FC = () => {
         <div className="block max-[494px]:hidden">
           <li>
             <a
-              href="/about"
+              href="#about"
               className={`px-4 py-2 transition ${
-                activeButton === "about" ? "bg-[#f5f4ed] backdrop-blur-md" : ""
+                activeButton === "about" ? "bg-white/20 backdrop-blur-md" : ""
               }`}
               onClick={() => handleButtonClick("about")}
             >
@@ -134,7 +148,7 @@ const Navbar: React.FC = () => {
         {/* Dropdown Menu */}
         {isMenuOpen && (
           <ul
-            className={`absolute top-12 left-0 w-full bg-white shadow-lg border-t border-gray-200 z-50 overflow-hidden transition-transform duration-5000 ease-in-out transform ${
+            className={`absolute top-12 left-0 w-full bg-white shadow-lg border-t border-gray-200 z-50 overflow-hidden transition-transform duration-5000 ease-in-out transform text-black text-right ${
               isMenuOpen
                 ? "translate-y-0 opacity-100"
                 : "-translate-y-full opacity-0"
@@ -143,7 +157,7 @@ const Navbar: React.FC = () => {
             <li>
               <a
                 href="/buy"
-                className="block px-4 py-2 hover:bg-gray-100"
+                className="block px-4 py-2 hover:bg-gray-100 rounded-t-md"
                 onClick={toggleMenu}
               >
                 BUY A HOME
@@ -174,4 +188,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+export default TransparentNavbar;

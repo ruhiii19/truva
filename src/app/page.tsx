@@ -1,15 +1,19 @@
 import Footer from "./components/footer";
-//import Navbar from "./components/whiteNavbar";
+//import WhiteNavbar from "./components/whiteNavbar";
 import Gallery from "./components/gallery";
 import Sidebar from "./components/sidebar";
-import TransparentNavbar from "./components/transparentNavbar";
+import Navbar from "./components/navbar";
+//import TransparentNavbar from "./components/transparentNavbar";
 
 export default function Home() {
   return (
     <div className="flex flex-col justify-center bg-white">
-      {/* <Navbar /> */}
-      <div className="bg-black">
+      {/*<WhiteNavbar />*/}
+      {/*<div className="bg-black">
         <TransparentNavbar />
+      </div>*/}
+      <div className="bg-black">
+        <Navbar />
       </div>
       <div className="flex flex-row ">
         <div className="w-1/4 hidden md:block">
